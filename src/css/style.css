@@ -1,0 +1,217 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: relative;
+}
+
+nav {
+    height: 53px;
+    background: rgb(33, 33, 33);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 70px;
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu .menu_link {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.menu .menu_item {
+    border-right: 2px dotted white;
+    padding-right: 45px;
+}
+
+.subheader {
+    position: absolute;
+    width: 100%;
+    height: 87px;
+    background: rgba(0, 0, 0, .6);
+}
+
+.subheader .subheader_logo {
+    display: block;
+    max-width: 100%;
+    margin-top: 19px;
+}
+
+.subheader .subheader_official {
+    margin-top: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: 250;
+}
+
+.subheader .subheader_call {
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.subheader .subheader_phone {
+    display: block;
+    margin-top: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 12px;
+    text-align: right;
+    text-transform: uppercase;
+
+}
+
+.subheader .subheader_btn {
+    margin-top: 20px;
+    width: 172px;
+    height: 46px;
+    top: 70px;
+    bottom: 735px;
+    border-radius: 4px;
+    box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(0.00deg, rgb(30, 172, 199),rgb(76, 226, 255) 100%);
+    color: rgb(255, 255, 255);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.promo {
+    min-height: 800px;
+    background: url(../img/uber_bg.jpeg) center center/cover no-repeat;
+    padding: 175px 0 186px;
+}
+
+.promo .promo_header {
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 60px;
+    margin: 0;
+    margin-top: 90px;
+}
+
+.promo .promo_subheader {
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 36px;
+    margin: 0;
+    margin-top: 22px;
+}
+
+.promo .promo_descr {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 39px;
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 115px auto 0 auto;
+    width: 259px;
+    height: 63px;
+    border-radius: 4px;
+    box-shadow: inset 0px -4px 0px 0px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(0.00deg, rgb(30, 172, 199),rgb(76, 226, 255) 100%);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 63px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cause {
+    min-height: 5250px;
+    background: rgb(255, 255, 255);
+    padding: 18px 0 64px 0;
+}
+
+.advantage {
+    display: block;
+    margin: auto;
+    padding: 8px;
+    width: 113px;
+    height: 24px;
+    background-color: #0e0e0e;
+    
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 11px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.eight_cause {
+    display: block;
+    margin: auto;
+    margin-top: 33px;
+
+    color: rgb(34, 34, 34);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cause .cause_wrapper {
+    margin-top: 16px;
+}
+
+.cause .cause_wrapper .cause_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 512px;
+}
+
+.cause .cause_wrapper .cause_item .cause_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 116px;
+    height: 116px;
+    background: rgb(30, 172, 199);
+    border-radius: 100%
+}
+
+.cause .cause_wrapper .cause_item .cause_descr {
+    width: 371px;
+    height: 150px;
+    margin-left: 25px;
+    margin-top: 26px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: left;
+}
+
+.cause .cause_wrapper .cause_item .cause_descr span {
+    color: rgb(30, 172, 199);
+    font-size: 17px;
+    font-weight: 400;
+}
