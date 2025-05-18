@@ -1,441 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/style.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме Артема Ситого - PPC Маркетолог</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Застосування шрифту Inter до всього документа */
+        body {
+            font-family: 'Inter', sans-serif; /* Змінено на Inter */
+        }
+        /* Плавний скрол */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Стилі для підказок під полями форми */
+        .form-hint {
+            font-size: 0.875rem; /* text-sm */
+            color: #6b7280; /* gray-500 */
+            margin-top: 0.25rem; /* mt-1 */
+        }
+        /* Стилі для модального вікна */
+        .modal-active {
+            display: flex;
+        }
+        /* Запобігання прокручування фону, коли модальне вікно відкрите */
+        .body-no-scroll {
+            overflow: hidden;
+        }
+    </style>
 </head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100">
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
 
-<body>
-  <header>
-      <nav>
-          <div class="container">
-              <ul class="menu">
-                  <li class="menu_item"><a href="#" class="menu_link">Главная</a></li>
-                  <li class="menu_item"><a href="#require" class="menu_link">Со своим автомобилем</a></li>
-                  <li class="menu_item"><a href="#require" class="menu_link">На автомобиле компании</a></li>
-                  <li class="menu_item"><a href="#" class="menu_link">Требования</a></li>
-                  <li class="menu_item"><a href="#" class="menu_link">Контакты</a></li>
-                  <li class="menu_item"><a href="#" class="menu_link">Оставить заявку</a></li>
-              </ul>
-          </div>
-          <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-          </div>
-      </nav>
-      <div class="subheader">
-          <div class="container">
-              <div class="row">
-                  <div class="col-6 col-md-4 offset-md-1">
-                      <a href="#" class="subheader_logo"><img src="icons/logo.png" alt="logo"></a>
-                      <div class="subheader_official">Официальный партнер Uber в Москве</div>
-                  </div>
-  
-                  <div class="xs-hidden col-md-3 offset-md-1 col-xl-2 offset-xl-2">
-                      <div class="subheader_call">Звоните нам ежедневно</div>
-                      <a href="tel:84957970988" class="subheader_phone">8 495 797 09 88</a>
-                  </div>
-  
-                  <div class="col-6 col-md-3">
-                      <a href="tel:84957970988" class="xs-visible subheader_phone">8 495 797 09 88</a>
-                      <button class="subheader_btn">заказать звонок</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                var filteredData = jsonData.filter(row => row.some(filledCell));
 
-  <section class="promo">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12 offset-md-0 col-lg-10 offset-lg-1">
-                  <h1 class="promo_header">КОМПАНИЯ UBER PARTNERS!</h1>
-                  <h2 class="promo_subheader">ПРИГЛАШАЕМ ВОДИТЕЛЕЙ! НА СВОЕМ АВТО!</h2>
-                  <div class="promo_descr">
-                      Компания UBER  динамически развивающаяся. Компания на рынке занимает лидирующее место среди
-                      таксомоторных компаний, Компания абсолютно прозрачная вы можете контролировать все процессы у себя в личном кабинете. Бонуcная система.Помимо выполненной работы по заказам, компания начисляет бонусы за
-                      пиковое время.
-                      <br><br>
-                      Мы одни из партнеров и зарекомендовали себя как одна из лучших команд в городе Москве.  Водители у нас
-                      зарабатывают от 80000- 120000 в месяц.
-                  </div>
-                  <button class="promo_btn">ОТПРАВИТЬ ЗАЯВКУ!</button>
-              </div>
-          </div>
-      </div>
-  </section>
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
 
-  <section class="reasons">
-      <div class="container">
-          <div class="label">преимущества</div>
-          <h2 class="title">8 причин начать работать с нами</h2>
-          <div class="row">
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_1.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Никаких наличных, оплата происходит автоматически</div>
-                          <div class="reasons_text">
-                              Стоимость поездки оплачивается пассажиром с привязанной банковской карты, т.е. нет никаких рисков связанных с перевозкой наличности как для пассажира, так и для водителя, Вам не нужно искать мелкие деньги для размена.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_2.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Комиссия 8% + БОНУСЫ</div>
-                          <div class="reasons_text">
-                              У нас минимальная комиссия и мы выплачиваем бонусы за каждую поездку, некоторые наши конкуренты оставляют бонусы себе. Мы работаем честно и с нами водители зарабатывают больше!
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_3.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Высокий доход с гарантированными выплатами</div>
-                          <div class="reasons_text">
-                              Мы выплачиваем заработную плату на личную банковскую карту водителя! Вам не нужно оформлять ООО, ИП, платить налоги, подавать декларацию, оплачивать бухгалтерские услуги и ведение банковского счета.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_4.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Работа в удобное время, никаких графиков</div>
-                          <div class="reasons_text">
-                              Вы просто нажимаете кнопку выйти на линию для начала работы, когда решите закончить, нажимаете выйти с линии. Вы можете подрабатывать только утром, вечером, в выходные или праздничные дни!
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_5.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Комфортное, прозрачное и простое подключение</div>
-                          <div class="reasons_text">
-                              Мы подключаем дистанционно и бесплатно, Вам нет необходимости приезжать к нам! Вы присылаете нам копии документов, мы регистрируем Вас и присылаем данные для подключения, через 1-2 дня Вы можете начинать работать!
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_6.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Всегда большое количество заказов</div>
-                          <div class="reasons_text">
-                              Приложение показывает, где на данный момент больше всего заказов и где действуют повышенные тарифы. У Вас не будет простоя и холостых пробегов. Наши пассажиры всегда приятные и абсолютно неконфликтные люди, которых приятно возить.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_7.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Круглосуточная поддержка</div>
-                          <div class="reasons_text">
-                              В Uber действует круглосуточная поддержка водителей по электронной почте. Если что-то непонятно, Вы всегда можете задать вопрос через On-line консультацию.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="reasons_block">
-                      <div class="reasons_round">
-                          <img src="icons/reasons/reason_8.png" alt="reason">
-                      </div>
-                      <div class="reasons_descr">
-                          <div class="reasons_subtitle">Без шашечек и наклеек</div>
-                          <div class="reasons_text">
-                              Вам не нужно менять цвет, устанавливать «шашки» на автомобиль и обклеивать его наклейками.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+    </script>
 
-  <section class="mobile">
-      <div class="container">
-          <div class="label">возможности</div>
-          <h2 class="title">мобильное приложение убер</h2>
-          <div class="subtitle">Сделайте заказ, совершите поездку и оплатите ее стоимость, используя свой мобильный телефон</div>
+    <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-lg p-10 my-12">
+        <header class="text-center mb-10">
+            <div class="flex justify-center mb-4">
+                <img src="img/я.jpg" alt="Артем Ситий" class="w-40 h-40 rounded-full border-2 border-blue-000 shadow-lg">
+            </div>
+            <h1 class="text-5xl font-extrabold text-gray-800">Артем Ситий</h1>
+            <h2 class="text-2xl text-blue-600 mt-2">PPC Маркетолог</h2>
+            <p class="text-gray-600 mt-3 flex justify-center items-center gap-x-4 gap-y-2 flex-wrap">
+                <span><i class="fas fa-envelope text-blue-500"></i> <a href="mailto:arsytyi@gmail.com" class="text-blue-600 hover:underline">arsytyi@gmail.com</a></span>
+                <span><i class="fas fa-phone text-blue-500"></i> +380 (96) 451-89-22</span>
+                <span><i class="fab fa-telegram-plane text-blue-500"></i> <a href="https://t.me/SytyiArtem" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">@SytyiArtem</a></span>
+                <span><i class="fas fa-map-marker-alt text-blue-500"></i> Україна</span>
+                <span><i class="fas fa-laptop text-blue-500"></i> Віддалений формат роботи</span>
+            </p>
+        </header>
 
-          <div class="row">
-              <div class="col-md-6 col-lg-4">
-                  <div class="mobile_item mobile_item_1">
-                      <div class="mobile_item_subtitle">
-                          оформление заказа одним касанием
-                      </div>
-                      <div class="mobile_item_plus"></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                  <div class="mobile_item mobile_item_2">
-                      <div class="mobile_item_subtitle">
-                          надежная подача
-                      </div>
-                      <div class="mobile_item_plus"></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                  <div class="mobile_item mobile_item_3">
-                      <div class="mobile_item_subtitle">
-                          прозрачные цены
-                      </div>
-                      <div class="mobile_item_plus"></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                  <div class="mobile_item mobile_item_4">
-                      <div class="mobile_item_subtitle">
-                          безналичная оплата
-                      </div>
-                      <div class="mobile_item_plus"></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                  <div class="mobile_item mobile_item_5">
-                      <div class="mobile_item_subtitle">
-                          обратная связь
-                      </div>
-                      <div class="mobile_item_plus"></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                  <div class="mobile_item mobile_item_6">
-                      <div class="mobile_item_subtitle">
-                          разделить стоимость поездки
-                      </div>
-                      <div class="mobile_item_plus"></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Профіль</h3>
+            <p class="text-gray-700 leading-relaxed">
+                Досвідчений PPC маркетолог із 3+ роками роботи в налаштуванні та оптимізації рекламних кампаній у Google Ads.
+                Спеціалізуюсь на аналітиці даних, підвищенні ROI та ефективному управлінні рекламними бюджетами.
+                Орієнтований на досягнення бізнес-цілей клієнтів через точне таргетування та креативні рекламні рішення.
+            </p>
+        </section>
 
-  <section class="choice">
-      <div class="container">
-          <div class="black"></div>
-          <div class="label label_white">возможности</div>
-          <h2 class="title title_white hidden-320">Выбор - отличная штука!</h2>
-          <div class="subtitle subtitle_white hidden-320">Закажите автомобиль, который подходит вам по стилю и бюджету</div>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Досвід роботи</h3>
+            <div class="mb-6 hover:bg-blue-50 p-4 rounded-lg transition duration-300">
+                <h4 class="text-xl font-medium text-gray-800 flex items-center">
+                    <i class="fas fa-briefcase text-blue-500 mr-2"></i> PPC Маркетолог
+                </h4>
+                <p class="text-gray-600">Digital Agency, Харків, Україна | Січень 2022 – Жовтень 2024</p>
+                <ul class="list-disc ml-8 text-gray-700 mt-2 space-y-1">
+                    <li>Налаштував та оптимізував понад 50 рекламних кампаній у Google Ads, що призвело до зростання конверсій на 35% у середньому.</li>
+                    <li>Зменшив CPC на 20% завдяки оптимізації ключових слів та стратегій ставок.</li>
+                    <li>Розробляв рекламні тексти, які підвищили CTR на 15%.</li>
+                    <li>Впровадив Google Tag Manager для точного відстеження подій та інтеграції з Google Analytics.</li>
+                </ul>
+            </div>
+            <div class="hover:bg-blue-50 p-4 rounded-lg transition duration-300">
+                <h4 class="text-xl font-medium text-gray-800 flex items-center">
+                    <i class="fas fa-briefcase text-blue-500 mr-2"></i> Молодший PPC Маркетолог
+                </h4>
+                <p class="text-gray-600">Marketing Solutions, Харків, Україна | Червень 2020 – Грудень 2021</p>
+                <ul class="list-disc ml-8 text-gray-700 mt-2 space-y-1">
+                    <li>Створював та керував кампаніями в Google Ads для малого та середнього бізнесу, досягнувши середнього ROAS 4:1.</li>
+                    <li>Проводив A/B тестування оголошень, що дозволило підвищити ефективність кампаній на 25%.</li>
+                    <li>Аналізував дані в Google Analytics для формування звітів та рекомендацій клієнтам.</li>
+                </ul>
+            </div>
+        </section>
 
-          <img src="img/car.png" alt="uber car" class="choice_img">
-          <div class="choice_descr">
-              Машины на каждый день.<br>
-              Лучше, быстрее и дешевле, чем такси
-          </div>
-      </div>
-  </section>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Освіта</h3>
+            <div class="hover:bg-blue-50 p-4 rounded-lg transition duration-300">
+                <p class="text-gray-700">
+                    <i class="fas fa-graduation-cap text-blue-500 mr-2"></i>
+                    <strong>Магістр, Технічний сервіс, Маркетинг</strong><br>
+                    Харківський Національний Технічний Університет, Харків, Україна<br>
+                    1995 – 2000
+                </p>
+            </div>
+        </section>
 
-  <section class="require" id="require">
-      <div class="container">
-          <div class="label">возможности</div>
-          <h2 class="title">условия и требования</h2>
-      <div class="row">
-          <div class="col-md-6">
-              <div class="require_block">
-                  <div class="require_title">
-                      УСЛОВИЯ: со своим авто:
-                  </div>
-                  <ul class="require_list">
-                      <li>Подключаем к системе UBER  под 10%.</li>
-                      <li>
-                          Ни каких взносов  0%!
-                      </li>
-                      <li>
-                          Можем подключать удаленно без приезда в офис
-                      </li>
-                      <li>
-                          ИП не требуется
-                      </li>
-                      <li>
-                          Заказы распределяются без учета рейтинга ближай-<br>шим водителям
-                      </li>
-                      <li>
-                          Работа только по безналичному расчету
-                      </li>
-                      <li>
-                          Деньги перечисляем на карту водителю или наличны-<br>ми в офисе
-                      </li>
-                  </ul>
-                  <div class="require_descr">
-                      В день заработок составляет 7000-12000р + бонус 3000т<br> рублей
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="require_block">
-                  <div class="require_title">
-                      УСЛОВИЯ: на авто компании:
-                  </div>
-                  <ul class="require_list">
-                      <li>
-                          Предоставляем авто без залога
-                      </li>
-                      <li>
-                          Без ежедневных выплат по аренде
-                      </li>
-                      <li>
-                          Среда пятница и суббота работа на компанию остальные дни вы работаете на себя
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="require_block require_block_nmb warning">
-                  <div class="require_title">
-                      ТРЕБОВАНИЕ:
-                  </div>
-                  <ul class="require_list">
-                      <li>
-                          Наличие автомобиля без рекламы
-                      </li>
-                      <li>
-                          Автомобиль не должен быть желтый и не с желтыми номерами
-                      </li>
-                      <li>
-                          Машина не старше 3 лет
-                      </li>
-                      <li>
-                          Стаж вождения не менее 3 лет
-                      </li>
-                      <li>
-                          Девайс на системе андроид 4.0и выше(самсунг)
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="require_block require_block_nmb warning">
-                  <div class="require_title">
-                      ДОКУМЕНТЫ:
-                  </div>
-                  <ul class="require_list">
-                      <li>
-                          Права 2 стороны
-                      </li>
-                      <li>
-                          Паспорт лицевая сторона
-                      </li>
-                      <li>
-                          СтС
-                      </li>
-                      <li>
-                          Лицензия( если есть)
-                      </li>
-                      <li>
-                          Номер телефона
-                      </li>
-                      <li>
-                          Номер карты для перечисления денег(указать в письме)!
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-      </div>
-  </section>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Навички</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Google Ads (Search, Display, Shopping, Video)</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div></div>
+                </div>
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Google Analytics</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div></div>
+                </div>
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Оптимізація бюджету</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div></div>
+                </div>
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Написання рекламних текстів</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div></div>
+                </div>
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Google Tag Manager</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div></div>
+                </div>
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Аналіз ключових слів (SEMrush, Ahrefs)</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 65%"></div></div>
+                </div>
+                <div>
+                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Facebook Ads</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div></div>
+                </div>
+            </div>
+        </section>
 
-  <section class="world">
-      <div class="container">
-          <div class="label label_white label_min">города</div>
-          <h2 class="title title_white">По всему миру</h2>
-          <div class="subtitle subtitle_white">Мы в вашем городе и по всему миру</div>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Сертифікації</h3>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-certificate text-blue-500 mr-2"></i> Google Ads Search Certification (2023)
+                </li>
+                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-certificate text-blue-500 mr-2"></i> Google Ads Display Certification (2023)
+                </li>
+                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-certificate text-blue-500 mr-2"></i> Google Analytics Individual Qualification (2022)
+                </li>
+                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-certificate text-blue-500 mr-2"></i> HubSpot Inbound Marketing Certification (2021)
+                </li>
+            </ul>
+        </section>
 
-          <a href="#" class="world_link">посмотреть все города</a>
-      </div>
-  </section>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Мови</h3>
+            <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <li class="text-gray-700 flex items-center"><i class="fas fa-language text-blue-500 mr-2"></i> Українська – рідна</li>
+                <li class="text-gray-700 flex items-center"><i class="fas fa-language text-blue-500 mr-2"></i> Російська – вільне володіння</li>
+                <li class="text-gray-700 flex items-center"><i class="fas fa-language text-blue-500 mr-2"></i> Англійська – базовий рівень (A2)</li>
+            </ul>
+        </section>
 
-  <footer>
-      <div class="footer_divider"></div>
-      <div class="footer_wrapper">
-          <!-- Если не оборачивать каждый блок в обертку - получится криво -->
-          <div>
-              <div class="footer_social">
-                  <a href="#" class="footer_social_item">
-                    <span class="icon-facebook"></span>
-                    
-                  </a>
-                  <a href="#" class="footer_social_item">
-                    <span class="icon-twitter"></span>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Особисті якості</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Аналітичне мислення</span>
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Увага до деталей</span>
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Організованість</span>
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Комунікабельність</span>
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Орієнтація на результат</span>
+            </div>
+        </section>
 
-                  </a>
-                  <a href="#" class="footer_social_item">
-                    <span class="icon-linkedin2"></span>
+        <section class="mb-10">
+            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Ваша вигода при співпраці зі мною</h3>
+            <ul class="list-disc ml-8 text-gray-700 space-y-2">
+                <li><span class="font-semibold text-blue-600">100% відповідність ТЗ:</span> всі вимоги, які зазначені в ТЗ, будуть реалізовані.</li>
+                <li><span class="font-semibold text-blue-600">На зв’язку 12 годин на добу:</span> працюю з 8 до 20 години. На листи відповідаю протягом 20 хвилин, на повідомлення в Telegram, Viber — 10 хвилин.</li>
+                <li><span class="font-semibold text-blue-600">Оплата після виконання роботи:</span> ви не витрачаєте ні копійки, поки робота не буде зроблена. Безкоштовне тестове завдання.</li>
+                <li><span class="font-semibold text-blue-600">Виконання роботи в строк:</span> вам не потрібно турбуватися про те, що терміни будуть зірвані або якість роботи буде не такою, як ви очікуєте.</li>
+                <li><span class="font-semibold text-blue-600">Економія часу та ресурсів:</span> вам не потрібно витрачати час на написання текстів самостійно, що дозволить зосередитися на інших важливих справах.</li>
+            </ul>
+        </section>
 
-                  </a>
-                  <a href="#" class="footer_social_item">
-                    <span class="icon-instagram"></span>
-                  </a>
-              </div>
-          </div>
-          <div>
-              <div class="footer_links">
-                  <div class="footer_links_main">
-                      <a href="#">на главную</a>
-                      <a href="#">города</a>
-                      <a href="#">для водителей</a>
-                  </div>
-                  <div class="footer_links_sub">
-                      <a href="#">центр поддержки</a>
-                      <a href="#">вакансии</a>
-                      <a href="#">разработчики</a>
-                      <a href="#">блог</a>
-                      <a href="#">о нас</a>
-                  </div>
-                  <a href="#" class="footer_links_lang">Русский</a>
-              </div>
-          </div>
-          <div>
-              <div class="footer_mobile">
-                  <a href="#">
-                      <img src="img/app_store.png" alt="App Store">
-                  </a>
-                  <a href="#">
-                      <img src="img/google_play.png" alt="Google play">
-                  </a>
-                  <a href="#">
-                      <img src="img/windows_store.png" alt="Windows store">
-                  </a>
-              </div>
-          </div>
-      </div>
-  </footer>
+        <section class="mb-10 text-center">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Почнемо працювати разом уже сьогодні!</h3>
+            <p class="text-gray-700 mb-6">
+                Заповніть форму нижче або натисніть кнопку, щоб домовитися про безкоштовну консультацію.<br>
+                Давайте обговоримо, як я можу вивести вашу рекламу на новий рівень!
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#" id="openFormModalButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition duration-300 text-lg">
+                    Заповнити форму
+                </a>
+                <a href="mailto:arsytyi@gmail.com" class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition duration-300 text-lg">
+                    Зв’язатися
+                </a>
+            </div>
+        </section>
+    </div>
 
-  <script src="js/script.js"></script>
+    <div id="formModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 overflow-y-auto h-full w-full hidden items-center justify-center p-4 z-50">
+        <div class="relative bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <button id="closeModalButton" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors duration-200 z-10">
+                <i class="fas fa-times fa-2x"></i>
+                <span class="sr-only">Закрити</span>
+            </button>
+
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-4">Розкажіть про ваш проект!</h2>
+            <p class="text-md sm:text-lg text-center text-gray-600 mb-6 sm:mb-8">
+                Заповніть цю коротку форму, щоб я міг краще зрозуміти ваші потреби та підготувати пропозицію, яка допоможе вашому бізнесу зростати.
+            </p>
+            <form action="#" method="POST" class="space-y-6"> <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-3">Розкажіть трохи про ваш бізнес:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="business_niche_modal" class="block text-sm font-medium text-gray-700">Ніша або сфера діяльності:</label>
+                            <input type="text" name="business_niche_modal" id="business_niche_modal" placeholder="Наприклад: інтернет-магазин одягу, юридичні послуги, онлайн-школа" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Це допоможе мені зрозуміти специфіку вашого ринку та конкурентне середовище.</p>
+                        </div>
+                        <div>
+                            <label for="target_geo_modal" class="block text-sm font-medium text-gray-700">Географія цільової аудиторії:</label>
+                            <input type="text" name="target_geo_modal" id="target_geo_modal" placeholder="Наприклад: Київ, Україна, Польща, США" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Знання географії дозволить правильно налаштувати таргетинг.</p>
+                        </div>
+                        <div>
+                            <label for="monthly_budget_modal" class="block text-sm font-medium text-gray-700">Орієнтовний місячний рекламний бюджет (USD):</label>
+                            <input type="text" name="monthly_budget_modal" id="monthly_budget_modal" placeholder="Наприклад: 500, 1000-2000, 5000+" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Це допоможе визначити масштаб кампаній та реалістичні KPI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-3">Ваш досвід з рекламою:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Чи запускали ви рекламу раніше?</label>
+                            <div class="mt-2 space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="previous_ads_experience_modal" value="yes" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                    <span class="ml-2 text-sm text-gray-700">Так</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="previous_ads_experience_modal" value="no" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                    <span class="ml-2 text-sm text-gray-700">Ні</span>
+                                </label>
+                            </div>
+                            <p class="form-hint">Це допоможе зрозуміти ваш поточний рівень знань та попередні результати.</p>
+                        </div>
+                        <div>
+                            <label for="platforms_used_modal" class="block text-sm font-medium text-gray-700">Які платформи використовували (якщо так)?</label>
+                            <input type="text" name="platforms_used_modal" id="platforms_used_modal" placeholder="Наприклад: Google Ads, Facebook Ads, Instagram, TikTok" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Вкажіть платформи, з якими вже маєте досвід.</p>
+                        </div>
+                        <div>
+                            <label for="previous_campaign_issues_modal" class="block text-sm font-medium text-gray-700">Що вас не влаштовувало в попередніх кампаніях (якщо були)?</label>
+                            <textarea name="previous_campaign_issues_modal" id="previous_campaign_issues_modal" rows="3" placeholder="Наприклад: низька кількість лідів, висока вартість кліка, нецільовий трафік" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                            <p class="form-hint">Ваш фідбек допоможе уникнути помилок у майбутньому та покращити стратегію.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-3">Ваші цілі:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="main_goal_modal" class="block text-sm font-medium text-gray-700">Основна ціль рекламної кампанії:</label>
+                            <select id="main_goal_modal" name="main_goal_modal" required class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <option value="">Оберіть ціль...</option>
+                                <option value="leads">Генерація лідів (заявки, дзвінки)</option>
+                                <option value="sales">Прямі продажі (для e-commerce)</option>
+                                <option value="traffic">Залучення трафіку на сайт</option>
+                                <option value="awareness">Підвищення впізнаваності бренду</option>
+                            </select>
+                            <p class="form-hint">Чітке визначення цілі є ключем до успішної кампанії.</p>
+                        </div>
+                        <div>
+                            <label for="desired_kpi_modal" class="block text-sm font-medium text-gray-700">Бажаний результат або KPI (якщо є):</label>
+                            <input type="text" name="desired_kpi_modal" id="desired_kpi_modal" placeholder="Наприклад: 100 лідів/місяць, ROAS 300%, CPL до $10" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Якщо у вас є конкретні показники, яких ви прагнете досягти, вкажіть їх.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-3">Організаційні моменти:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="decision_maker_modal" class="block text-sm font-medium text-gray-700">Хто у вашій компанії приймає рішення щодо запуску та бюджету реклами?</label>
+                            <input type="text" name="decision_maker_modal" id="decision_maker_modal" placeholder="Наприклад: я, маркетинг-директор, власник бізнесу" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Це важливо для ефективної комунікації та узгодження стратегії.</p>
+                        </div>
+                        <div>
+                            <label for="start_date_modal" class="block text-sm font-medium text-gray-700">Коли плануєте почати співпрацю/запуск реклами?</label>
+                            <input type="text" name="start_date_modal" id="start_date_modal" placeholder="Наприклад: якомога швидше, протягом місяця, через 2-3 місяці" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Допоможе мені спланувати ресурси та час.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-3">Ваші контактні дані:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="contact_name_modal" class="block text-sm font-medium text-gray-700">Ваше ім’я:</label>
+                            <input type="text" name="contact_name_modal" id="contact_name_modal" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Щоб я знав, як до вас звертатися.</p>
+                        </div>
+                        <div>
+                            <label for="contact_email_modal" class="block text-sm font-medium text-gray-700">Email:</label>
+                            <input type="email" name="contact_email_modal" id="contact_email_modal" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Для надсилання пропозиції та подальшого спілкування.</p>
+                        </div>
+                        <div>
+                            <label for="contact_phone_modal" class="block text-sm font-medium text-gray-700">Телефон або зручний месенджер (Telegram, Viber, WhatsApp):</label>
+                            <input type="text" name="contact_phone_modal" id="contact_phone_modal" placeholder="Наприклад: +380 XX XXX XX XX або @ нікнейм_телеграм" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <p class="form-hint">Для оперативного зв'язку та обговорення деталей.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                        Відправити заявку та отримати консультацію
+                    </button>
+                </div>
+            </form>
+            <p class="mt-6 text-center text-xs text-gray-600">
+                На основі ваших відповідей я підготую персональну стратегію для вашого бізнесу. <br>Відповіді не зобов’язують вас до співпраці — це просто перший крок до зростання!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Елементи модального вікна
+        const openModalButton = document.getElementById('openFormModalButton');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const formModal = document.getElementById('formModal');
+        const body = document.body;
+
+        // Функція для відкриття модального вікна
+        function openModal() {
+            if (formModal) {
+                formModal.classList.remove('hidden');
+                formModal.classList.add('modal-active'); // Використовуємо flex для центрування
+                body.classList.add('body-no-scroll'); // Запобігаємо прокручуванню фону
+            }
+        }
+
+        // Функція для закриття модального вікна
+        function closeModal() {
+            if (formModal) {
+                formModal.classList.add('hidden');
+                formModal.classList.remove('modal-active');
+                body.classList.remove('body-no-scroll'); // Відновлюємо прокручування фону
+            }
+        }
+
+        // Обробники подій
+        if (openModalButton) {
+            openModalButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Запобігаємо стандартній дії посилання
+                openModal();
+            });
+        }
+
+        if (closeModalButton) {
+            closeModalButton.addEventListener('click', closeModal);
+        }
+
+        // Закриття модального вікна при кліку на оверлей (фон)
+        if (formModal) {
+            formModal.addEventListener('click', (event) => {
+                // Перевіряємо, чи клік був саме на formModal (оверлей), а не на його дочірніх елементах
+                if (event.target === formModal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Закриття модального вікна при натисканні клавіші 'Escape'
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && formModal && !formModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
