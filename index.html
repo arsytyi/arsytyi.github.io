@@ -3,247 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме Артема Ситого - PPC Маркетолог</title>
-    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Твій професійний лендінг</title>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
     <style>
-        /* Застосування шрифту Inter до всього документа */
-        body {
-            font-family: 'Inter', sans-serif; /* Змінено на Inter */
-        }
-        /* Плавний скрол */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Стилі для підказок під полями форми */
-        .form-hint {
-            font-size: 0.875rem; /* text-sm */
-            color: #6b7280; /* gray-500 */
-            margin-top: 0.25rem; /* mt-1 */
-        }
-        /* Стилі для модального вікна */
-        .modal-active {
-            display: flex;
-        }
-        /* Запобігання прокручування фону, коли модальне вікно відкрите */
-        .body-no-scroll {
-            overflow: hidden;
-        }
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        h1 { color: #2c3e50; }
+        .button { background: #2980b9; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; }
     </style>
-
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16609483739">
-    </script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-16609483739');
-    </script>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-gray-100">
-    <script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header>
+        <h1>Пропозиція, від якої неможливо відмовитися</h1>
+    </header>
+    
+    <main>
+        <p>Це твій новий сайт, який повністю контролюється. Google Ads тепер бачить усі твої конверсії.</p>
+        <a href="#" class="button">Зв'язатися зі мною</a>
+    </main>
 
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-    </script>
-
-    <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-lg p-10 my-12">
-        <header class="text-center mb-10">
-            <div class="flex justify-center mb-4">
-                <img src="src/img/я.jpg" alt="Артем Ситий" class="w-40 h-40 rounded-full border-2 border-blue-000 shadow-lg">
-            </div>
-            <h1 class="text-5xl font-extrabold text-gray-800">Артем Ситий</h1>
-            <h2 class="text-2xl text-blue-600 mt-2">PPC Маркетолог</h2>
-            <p class="text-gray-600 mt-3 flex justify-center items-center gap-x-4 gap-y-2 flex-wrap">
-                <span><i class="fas fa-envelope text-blue-500"></i> <a href="mailto:arsytyi@gmail.com" class="text-blue-600 hover:underline">arsytyi@gmail.com</a></span>
-                <span><i class="fas fa-phone text-blue-500"></i> +380 (96) 451-89-22</span>
-                <span><i class="fab fa-telegram-plane text-blue-500"></i> <a href="https://t.me/SytyiArtem" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">@SytyiArtem</a></span>
-                <span><i class="fas fa-map-marker-alt text-blue-500"></i> Україна</span>
-                <span><i class="fas fa-laptop text-blue-500"></i> Віддалений формат роботи</span>
-            </p>
-        </header>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Профіль</h3>
-            <p class="text-gray-700 leading-relaxed">
-                Досвідчений PPC маркетолог із 3+ роками роботи в налаштуванні та оптимізації рекламних кампаній у Google Ads.
-                Спеціалізуюсь на аналітиці даних, підвищенні ROI та ефективному управлінні рекламними бюджетами.
-                Орієнтований на досягнення бізнес-цілей клієнтів через точне таргетування та креативні рекламні рішення.
-            </p>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Досвід роботи</h3>
-            <div class="mb-6 hover:bg-blue-50 p-4 rounded-lg transition duration-300">
-                <h4 class="text-xl font-medium text-gray-800 flex items-center">
-                    <i class="fas fa-briefcase text-blue-500 mr-2"></i> PPC Маркетолог
-                </h4>
-                <p class="text-gray-600">Digital Agency, Харків, Україна | Січень 2022 – Жовтень 2024</p>
-                <ul class="list-disc ml-8 text-gray-700 mt-2 space-y-1">
-                    <li>Налаштував та оптимізував понад 50 рекламних кампаній у Google Ads, що призвело до зростання конверсій на 35% у середньому.</li>
-                    <li>Зменшив CPC на 20% завдяки оптимізації ключових слів та стратегій ставок.</li>
-                    <li>Розробляв рекламні тексти, які підвищили CTR на 15%.</li>
-                    <li>Впровадив Google Tag Manager для точного відстеження подій та інтеграції з Google Analytics.</li>
-                </ul>
-            </div>
-            <div class="hover:bg-blue-50 p-4 rounded-lg transition duration-300">
-                <h4 class="text-xl font-medium text-gray-800 flex items-center">
-                    <i class="fas fa-briefcase text-blue-500 mr-2"></i> Молодший PPC Маркетолог
-                </h4>
-                <p class="text-gray-600">Marketing Solutions, Харків, Україна | Червень 2020 – Грудень 2021</p>
-                <ul class="list-disc ml-8 text-gray-700 mt-2 space-y-1">
-                    <li>Створював та керував кампаніями в Google Ads для малого та середнього бізнесу, досягнувши середнього ROAS 4:1.</li>
-                    <li>Проводив A/B тестування оголошень, що дозволило підвищити ефективність кампаній на 25%.</li>
-                    <li>Аналізував дані в Google Analytics для формування звітів та рекомендацій клієнтам.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Освіта</h3>
-            <div class="hover:bg-blue-50 p-4 rounded-lg transition duration-300">
-                <p class="text-gray-700">
-                    <i class="fas fa-graduation-cap text-blue-500 mr-2"></i>
-                    <strong>Магістр, Технічний сервіс, Маркетинг</strong><br>
-                    Харківський Національний Технічний Університет, Харків, Україна<br>
-                    1995 – 2000
-                </p>
-            </div>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Навички</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Google Ads (Search, Display, Shopping, Video)</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div></div>
-                </div>
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Google Analytics</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div></div>
-                </div>
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Оптимізація бюджету</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div></div>
-                </div>
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Написання рекламних текстів</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div></div>
-                </div>
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Google Tag Manager</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div></div>
-                </div>
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Аналіз ключових слів (SEMrush, Ahrefs)</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 65%"></div></div>
-                </div>
-                <div>
-                    <p class="text-gray-700 flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Facebook Ads</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Сертифікації</h3>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-certificate text-blue-500 mr-2"></i> Google Ads Search Certification (2023)
-                </li>
-                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-certificate text-blue-500 mr-2"></i> Google Ads Display Certification (2023)
-                </li>
-                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-certificate text-blue-500 mr-2"></i> Google Analytics Individual Qualification (2022)
-                </li>
-                <li class="text-gray-700 flex items-center hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-certificate text-blue-500 mr-2"></i> HubSpot Inbound Marketing Certification (2021)
-                </li>
-            </ul>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Мови</h3>
-            <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <li class="text-gray-700 flex items-center"><i class="fas fa-language text-blue-500 mr-2"></i> Українська – рідна</li>
-                <li class="text-gray-700 flex items-center"><i class="fas fa-language text-blue-500 mr-2"></i> Російська – вільне володіння</li>
-                <li class="text-gray-700 flex items-center"><i class="fas fa-language text-blue-500 mr-2"></i> Англійська – базовий рівень (A2)</li>
-            </ul>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Особисті якості</h3>
-            <div class="flex flex-wrap gap-3">
-                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Аналітичне мислення</span>
-                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Увага до деталей</span>
-                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Організованість</span>
-                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Комунікабельність</span>
-                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm hover:bg-blue-200 transition duration-300">Орієнтація на результат</span>
-            </div>
-        </section>
-
-        <section class="mb-10">
-            <h3 class="text-2xl font-semibold text-gray-800 border-l-4 border-blue-500 pl-4 mb-4">Ваша вигода при співпраці зі мною</h3>
-            <ul class="list-disc ml-8 text-gray-700 space-y-2">
-                <li><span class="font-semibold text-blue-600">100% відповідність ТЗ:</span> всі вимоги, які зазначені в ТЗ, будуть реалізовані.</li>
-                <li><span class="font-semibold text-blue-600">На зв’язку 12 годин на добу:</span> працюю з 8 до 20 години. На листи відповідаю протягом 20 хвилин, на повідомлення в Telegram, Viber — 10 хвилин.</li>
-                <li><span class="font-semibold text-blue-600">Оплата після виконання роботи:</span> ви не витрачаєте ні копійки, поки робота не буде зроблена. Безкоштовне тестове завдання.</li>
-                <li><span class="font-semibold text-blue-600">Виконання роботи в строк:</span> вам не потрібно турбуватися про те, що терміни будуть зірвані або якість роботи буде не такою, як ви очікуєте.</li>
-                <li><span class="font-semibold text-blue-600">Економія часу та ресурсів:</span> вам не потрібно витрачати час на написання текстів самостійно, що дозволить зосередитися на інших важливих справах.</li>
-            </ul>
-        </section>
-
-        <section class="mb-10 text-center">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Почнемо працювати разом уже сьогодні!</h3>
-            <p class="text-gray-700 mb-6">
-                Заповніть форму за посиланням або напишіть мені напряму — і я підготую для вас персональну стратегію!
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLbUgZ2zcWamLsb3Bood1bnDLDjPVEu-bOUAYi9qovrFaF3w/viewform?usp=dialog" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition duration-300 text-lg">
-                    Заповнити Google Форму
-                </a>
-                <a href="mailto:arsytyi@gmail.com" class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition duration-300 text-lg">
-                    Зв’язатися
-                </a>
-            </div>
-        </section>
-    </div>
+    <footer>
+        <p>© 2026 Твоя Компанія</p>
+    </footer>
 </body>
 </html>
