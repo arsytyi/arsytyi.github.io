@@ -3,33 +3,424 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Твій професійний лендінг</title>
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <title>Ожина сортова | Прямі поставки з розплідника</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1 { color: #2c3e50; }
-        .button { background: #2980b9; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; }
+        /* Базові змінні та скидання (Reset) */
+        :root {
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --bg-main: #ffffff;
+            --bg-alt: #f7fafc;
+            --accent: #2d3748;
+            --border: #e2e8f0;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background: var(--bg-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .hidden { display: none !important; }
+
+        /* Типографіка */
+        h1, h2, h3 { font-weight: 600; color: var(--text-main); margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; line-height: 1.2; }
+        h2 { font-size: 2rem; }
+        .subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 30px; max-width: 600px; }
+        
+        /* Списки довіри (Hero) */
+        ul.trust-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        ul.trust-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        ul.trust-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px;
+            width: 8px; height: 14px;
+            border: solid var(--accent);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Кнопки (CTA) */
+        .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 4px;
+            border: 1px solid var(--accent);
+            background: var(--bg-main); color: var(--accent);
+            font-size: 1rem; font-weight: 500; text-decoration: none;
+            cursor: pointer; transition: all 0.2s ease;
+        }
+        .btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .btn:hover { background: var(--bg-alt); }
+        .btn-primary { background: var(--accent); color: var(--bg-main); }
+        .btn-primary:hover { background: #1a202c; color: var(--bg-main); }
+
+        /* Сітка товарів */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex; flex-direction: column;
+            cursor: pointer; transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 240px; object-fit: cover; background: var(--bg-alt); }
+        .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; }
+        .card-desc { color: var(--text-muted); margin-bottom: 24px; flex-grow: 1; }
+        
+        /* Переваги */
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .adv-item {
+            padding: 24px;
+            background: var(--bg-alt);
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Сторінка товару */
+        .product-layout {
+            display: flex; gap: 40px; align-items: flex-start;
+        }
+        .product-image { flex: 1; max-width: 500px; width: 100%; }
+        .product-image img { width: 100%; border-radius: 8px; border: 1px solid var(--border); }
+        .product-info { flex: 1; }
+        .back-nav {
+            display: inline-block; margin-bottom: 30px;
+            color: var(--text-muted); cursor: pointer;
+            text-decoration: underline; font-weight: 500;
+        }
+        .back-nav:hover { color: var(--accent); }
+
+        /* Footer */
+        footer { padding: 60px 0; background: var(--bg-alt); font-size: 0.95rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col a { color: var(--text-main); text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-col a:hover { text-decoration: underline; }
+        .legal-links a { color: var(--text-muted); cursor: pointer; text-decoration: underline; display: block; margin-bottom: 10px; }
+
+        /* Модальні вікна */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); z-index: 1000;
+            display: flex; justify-content: center; align-items: center; padding: 20px;
+        }
+        .modal-content {
+            background: var(--bg-main); width: 100%; max-width: 600px;
+            max-height: 85vh; overflow-y: auto; padding: 40px;
+            border-radius: 8px; position: relative;
+        }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px;
+            background: none; border: none; font-size: 1.5rem; cursor: pointer;
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: var(--accent); color: var(--bg-main);
+            padding: 16px 20px; z-index: 999;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px; box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+        }
+        .cookie-banner button {
+            background: var(--bg-main); color: var(--accent);
+            border: none; padding: 10px 20px; border-radius: 4px;
+            font-weight: 600; cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            section { padding: 50px 0; }
+            .product-layout { flex-direction: column; }
+            .btn-group { flex-direction: column; width: 100%; }
+            .btn { justify-content: center; width: 100%; }
+        }
     </style>
 </head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <header>
-        <h1>Пропозиція, від якої неможливо відмовитися</h1>
-    </header>
-    
-    <main>
-        <p>Це твій новий сайт, який повністю контролюється. Google Ads тепер бачить усі твої конверсії.</p>
-        <a href="#" class="button">Зв'язатися зі мною</a>
+
+    <main id="view-catalog">
+        <section>
+            <div class="container">
+                <h1>Ожина сортова: вирощування та продаж</h1>
+                <div class="subtitle">Свіжа продукція з розплідника. Оптові та роздрібні поставки.</div>
+                
+                <ul class="trust-list">
+                    <li>Власний розплідник та контроль якості на кожному етапі</li>
+                    <li>Суворе дотримання температурного режиму при зберіганні</li>
+                    <li>Калібрування та сортування ягід перед відправкою клієнту</li>
+                </ul>
+
+                <div class="btn-group">
+                    <a href="tel:+380685328871" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        Зателефонувати
+                    </a>
+                    <a href="https://t.me/SytyiArtem" class="btn" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.96 1.25-5.54 3.67-.52.36-.99.54-1.41.53-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.48 1.01-.74 3.94-1.71 6.57-2.85 7.88-3.39 3.74-1.55 4.52-1.82 5.03-1.83.11 0 .36.03.49.14.11.09.14.22.15.33-.01.07-.01.19-.02.31z"/></svg>
+                        Написати в Telegram
+                    </a>
+                    <a href="mailto:arsytyi@gmail.com" class="btn">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Написати на e-mail
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="assortment">
+            <div class="container">
+                <h2>Асортимент продукції</h2>
+                <div class="grid" id="products-container">
+                    </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Переваги співпраці</h2>
+                <div class="adv-grid">
+                    <div class="adv-item">Прямі поставки без залучення посередників.</div>
+                    <div class="adv-item">Збір врожаю здійснюється виключно в день відправлення.</div>
+                    <div class="adv-item">Використання екологічно безпечних добрив.</div>
+                    <div class="adv-item">Ретельний контроль якості на етапі зважування та пакування.</div>
+                    <div class="adv-item">Можливість попереднього замовлення необхідних обсягів.</div>
+                    <div class="adv-item">Адаптивність до логістичних потреб оптових клієнтів.</div>
+                    <div class="adv-item">Прозоре та прогнозоване ціноутворення.</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Обговорення замовлення</h2>
+                <p class="subtitle">Для узгодження обсягів постачання, термінів та умов співпраці, будь ласка, зв'яжіться з нами зручним для вас каналом комунікації. Ми готові надати вичерпну інформацію щодо наявності сортів.</p>
+                
+                <div class="btn-group">
+                    <a href="tel:+380685328871" class="btn btn-primary">Зателефонувати</a>
+                    <a href="https://t.me/SytyiArtem" class="btn" target="_blank">Написати в Telegram</a>
+                    <a href="mailto:arsytyi@gmail.com" class="btn">Написати на e-mail</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="view-product" class="hidden">
+        <section>
+            <div class="container">
+                <span class="back-nav" onclick="app.navigate('catalog')">← Повернутися до асортименту</span>
+                <div class="product-layout">
+                    <div class="product-image">
+                        <img id="detail-img" src="" alt="Ожина">
+                    </div>
+                    <div class="product-info">
+                        <h1 id="detail-title"></h1>
+                        <div class="subtitle" style="color: var(--text-main);" id="detail-desc"></div>
+                        
+                        <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border);">
+                            <h3>Замовлення продукції</h3>
+                            <p style="margin-bottom: 20px; color: var(--text-muted);">Зв'яжіться з нами для оформлення замовлення.</p>
+                            <div class="btn-group">
+                                <a href="tel:+380685328871" class="btn btn-primary">Зателефонувати</a>
+                                <a href="https://t.me/SytyiArtem" class="btn" target="_blank">Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 Твоя Компанія</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 style="font-size: 1.2rem;">Контактна інформація</h3>
+                    <a href="tel:+380685328871">+38 (068) 532-88-71</a>
+                    <a href="https://t.me/SytyiArtem" target="_blank">@SytyiArtem (Telegram)</a>
+                    <a href="mailto:arsytyi@gmail.com">arsytyi@gmail.com</a>
+                </div>
+                <div class="footer-col legal-links">
+                    <h3 style="font-size: 1.2rem;">Правова інформація</h3>
+                    <a onclick="app.openModal('modal-terms')">Угода користувача</a>
+                    <a onclick="app.openModal('modal-privacy')">Згода на обробку персональних даних</a>
+                    <a onclick="app.openModal('modal-cookie-policy')">Повідомлення про cookies</a>
+                </div>
+            </div>
+            <div style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; color: var(--text-muted); font-size: 0.85rem;">
+                © 2026. Всі права захищені.
+            </div>
+        </div>
     </footer>
+
+    <div id="modal-terms" class="modal-overlay hidden" onclick="app.closeModals()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="app.closeModals()">&times;</button>
+            <h2>Угода користувача</h2>
+            <p style="margin-bottom:15px;">Ця угода визначає правила та умови використання веб-ресурсу. Інформація, розміщена на сайті, призначена для ознайомлення з асортиментом продукції.</p>
+            <p>Використовуючи сайт, користувач погоджується дотримуватись норм чинного законодавства та не використовувати контент з метою, що порушує права власника ресурсу.</p>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay hidden" onclick="app.closeModals()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="app.closeModals()">&times;</button>
+            <h2>Згода на обробку персональних даних</h2>
+            <p style="margin-bottom:15px;">Здійснюючи звернення за вказаними контактними даними (телефон, електронна пошта, месенджери), ви надаєте згоду на обробку ваших персональних даних (ім'я, номер телефону, email).</p>
+            <p>Обробка здійснюється виключно з метою надання відповідей на ваші запити, обговорення умов співпраці та оформлення замовлень. Дані не передаються третім особам без вашої згоди, окрім випадків, передбачених законодавством.</p>
+        </div>
+    </div>
+
+    <div id="modal-cookie-policy" class="modal-overlay hidden" onclick="app.closeModals()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="app.closeModals()">&times;</button>
+            <h2>Повідомлення про cookies</h2>
+            <p>Цей сайт використовує виключно технічні файли cookie, які зберігаються локально у вашому браузері (технологія localStorage) для запам'ятовування вашої згоди на використання cookies. Ми не застосовуємо сторонні трекери, аналітичні скрипти або маркетингові інструменти, що збирають інформацію про ваші дії.</p>
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div>Ми використовуємо необхідні файли cookie для забезпечення коректної роботи сайту. Залишаючись на сайті, ви погоджуєтесь з їх використанням.</div>
+        <button onclick="app.acceptCookies()">Прийняти</button>
+    </div>
+
+    <script>
+        // Ізольований стан додатку (Словник даних)
+        // Плейсхолдер 2x2 пікселя (Base64 PNG), відповідає вимогам задачі.
+        const base64Placeholder = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVQI12P8//8/AwMDGwMEMEKoAAAD7AIF/wa0oQAAAABJRU5ErkJggg==";
+
+        const db = [
+            {
+                id: 1,
+                title: 'Ожина сорту Натчез (Natchez)',
+                desc: 'Ягоди Натчез дуже великі, видовженої форми, блискучі, чорні, з щільною м\'якоттю та чудовим, солодким смаком з легкою приємною кислинкою. Вони відмінно транспортуються та довго зберігаються, що робить цей сорт ідеальним як для свіжого споживання, так і для переробки.',
+                img: base64Placeholder
+            },
+            {
+                id: 2,
+                title: 'Ожина сорту Карака Блек (Karaka Black)',
+                desc: 'Ожина "Карака Блек" - це високопродуктивний новозеландський сорт раннього терміну дозрівання. Ягоди великі, видовжені, чорного кольору, мають солодкий смак з легкою кислинкою та багатим післясмаком. Сорт придатний для споживання у свіжому вигляді та для переробки.',
+                img: base64Placeholder
+            },
+            {
+                id: 3,
+                title: 'Ожина сорту Небо Може Зачекати (Heaven Can Wait)',
+                desc: 'Ягоди великі, конічної форми, блискучі, насичено-чорні, з яскраво вираженим ожиновим ароматом та чудовим, солодким смаком. Небеса Можуть Зачекати є відмінним варіантом для тих, хто бажає насолоджуватися свіжою ожиною.',
+                img: base64Placeholder
+            }
+        ];
+
+        const app = {
+            init() {
+                this.renderProducts();
+                this.checkCookies();
+            },
+
+            // Рендер каталогу
+            renderProducts() {
+                const container = document.getElementById('products-container');
+                container.innerHTML = db.map(item => `
+                    <div class="card" onclick="app.showProduct(${item.id})">
+                        <img src="${item.img}" alt="${item.title}" loading="lazy">
+                        <div class="card-body">
+                            <div class="card-title">${item.title}</div>
+                            <div class="card-desc">${item.desc.substring(0, 90)}...</div>
+                            <div class="btn">Детальніше</div>
+                        </div>
+                    </div>
+                `).join('');
+            },
+
+            // Навігація між "сторінками"
+            navigate(view) {
+                document.getElementById('view-catalog').classList.add('hidden');
+                document.getElementById('view-product').classList.add('hidden');
+                
+                if (view === 'catalog') {
+                    document.getElementById('view-catalog').classList.remove('hidden');
+                } else if (view === 'product') {
+                    document.getElementById('view-product').classList.remove('hidden');
+                }
+                window.scrollTo(0, 0);
+            },
+
+            // Відображення конкретного товару
+            showProduct(id) {
+                const item = db.find(p => p.id === id);
+                if (!item) return;
+
+                document.getElementById('detail-title').innerText = item.title;
+                document.getElementById('detail-desc').innerText = item.desc;
+                document.getElementById('detail-img').src = item.img;
+                
+                this.navigate('product');
+            },
+
+            // Робота з модальними вікнами
+            openModal(modalId) {
+                document.getElementById(modalId).classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Блокування скролу
+            },
+            closeModals() {
+                document.querySelectorAll('.modal-overlay').forEach(el => el.classList.add('hidden'));
+                document.body.style.overflow = '';
+            },
+
+            // Робота з Cookies
+            checkCookies() {
+                if (!localStorage.getItem('cookiesAccepted')) {
+                    document.getElementById('cookie-banner').classList.remove('hidden');
+                }
+            },
+            acceptCookies() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                document.getElementById('cookie-banner').classList.add('hidden');
+            }
+        };
+
+        // Точка входу
+        document.addEventListener('DOMContentLoaded', () => app.init());
+        
+        // Закриття модалок по клавіші Esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') app.closeModals();
+        });
+    </script>
 </body>
 </html>
