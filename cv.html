@@ -185,13 +185,29 @@
 
     /* Print styles */
     @media print {
-      body { background: #fff; }
+      
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .cv-actions { display: none; }
       .cv-page { margin: 0; padding: 0; max-width: 100%; }
-      .cv-paper { box-shadow: none; border-radius: 0; }
-      .cv-header { padding: 32px; }
-      .cv-body { padding: 24px 32px 32px; }
-      .cv-section { break-inside: avoid; }
+      .cv-paper { box-shadow: none; border-radius: 0; background: #fff; }
+      .cv-header { padding: 24px 32px !important; }
+      .cv-body { padding: 20px 32px; }
+      
+      /* Fix layout breaking */
+      .cv-section { break-inside: auto; margin-bottom: 24px; }
+      .cv-section__title { break-after: avoid; margin-bottom: 12px; }
+      
+      /* Keep items intact */
+      .cv-exp, .cv-project, .cv-skill-group, .cv-edu { break-inside: avoid; margin-bottom: 16px; }
+      
+      /* Optimize spacing and font for print */
+      html { font-size: 14px; }
+      .cv-about, .cv-exp__list, .cv-project__desc { font-size: 0.9rem; line-height: 1.5; }
+      .cv-project__name { font-size: 0.95rem; }
+      .cv-exp__role { font-size: 0.95rem; }
+      
+      /* Fix empty spaces */
+      .cv-project:last-child, .cv-exp:last-child { margin-bottom: 0; }
     }
 
     @media (max-width: 640px) {
@@ -200,6 +216,14 @@
       .cv-body { padding: 24px; }
       .cv-skills { grid-template-columns: 1fr; }
       .cv-exp__header { flex-direction: column; gap: 4px; }
+    }
+  
+    @page {
+      size: a4 portrait;
+      margin-top: 12mm;
+      margin-bottom: 12mm;
+      margin-left: 12mm;
+      margin-right: 12mm;
     }
   </style>
 </head>
@@ -292,6 +316,20 @@
               <li>Conducted market research, competitor analysis, and Customer Development to validate product hypotheses</li>
               <li>Built financial models and analyzed unit economics (LTV, CAC, ROI, Retention)</li>
               <li>Developed product strategies, monetization models, and Go-to-Market (GTM) plans</li>
+            </ul>
+          </div>
+
+          <div class="cv-exp">
+            <div class="cv-exp__header">
+              <span class="cv-exp__role">Growth &amp; Analytics (Internships &amp; Projects)</span>
+              <span class="cv-exp__date">2024 &mdash; 2026</span>
+            </div>
+            <p class="cv-exp__company">SKELAR, Genesis Academy, Google Skillshop, Self-directed</p>
+            <ul class="cv-exp__list">
+              <li>Completed SKELAR Digital Marketing Internship covering market validation, funnels, Meta Ads, creative evaluation, unit economics, and data-driven scaling</li>
+              <li>Attended Genesis Analytics Week and completed the final test</li>
+              <li>Configured test search and display campaigns in Google Ads with semantic cores, query clustering, and negative keywords</li>
+              <li>Created GA4 standard reports, user journey analysis, key events, and basic conversion tracking</li>
             </ul>
           </div>
 
